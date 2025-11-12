@@ -63,14 +63,20 @@ const TestimonialCard = ({ handleShuffle, testimonial, position, id, author, rol
     }
   };
 
+  // Detect if it's a touch device
+  const isTouchDevice = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  
+  // Lower threshold for mobile devices (50px vs 150px for desktop)
+  const swipeThreshold = isTouchDevice ? 50 : 150;
+
   return (
     <motion.div
       style={{
         zIndex: getPositionStyles(position).zIndex
       }}
       animate={getPositionStyles(position)}
-      drag={true}
-      dragElastic={0.35}
+      drag={isFront ? "x" : false}
+      dragElastic={0.5}
       dragListener={isFront}
       dragConstraints={{
         top: 0,
@@ -78,16 +84,19 @@ const TestimonialCard = ({ handleShuffle, testimonial, position, id, author, rol
         right: 0,
         bottom: 0
       }}
+      dragMomentum={false}
       onDragStart={(e) => {
-        dragRef.current = e.clientX;
+        dragRef.current = e.clientX || e.touches?.[0]?.clientX || 0;
       }}
       onDragEnd={(e) => {
-        if (dragRef.current - e.clientX > 150) {
+        const endX = e.clientX || e.changedTouches?.[0]?.clientX || 0;
+        if (dragRef.current - endX > swipeThreshold) {
           handleShuffle();
         }
         dragRef.current = 0;
       }}
       transition={{ duration: 0.35, ease: "easeInOut" }}
+      whileTap={isFront ? { scale: 0.98 } : {}}
       className={`absolute left-0 top-0 w-full h-full select-none rounded-2xl md:rounded-3xl border-2 ${
         position === "front" ? "border-[#D4AF37]" : position === "middle" ? "border-[#ff0000]/50" : "border-[#D4AF37]/30"
       } bg-gradient-to-br from-black/90 via-black/80 to-black/90 backdrop-blur-xl shadow-2xl ${

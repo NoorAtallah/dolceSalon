@@ -43,14 +43,14 @@ const GallerySection = () => {
         {/* Gallery Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {[
-            "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80",
-            "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80",
-            "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
-            "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&q=80",
-            "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=600&q=80",
-            "https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&q=80",
-            "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80",
-            "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80",
+            "/images/15.jpg",
+            "/images/16.jpg",
+            "/images/17.jpg",
+            "/images/18.jpg",
+            "/images/19.jpg",
+            "/images/20.jpg",
+            "/images/21.jpeg",
+            "/images/7.jpeg",
           ].map((img, i) => (
             <motion.div
               key={i}

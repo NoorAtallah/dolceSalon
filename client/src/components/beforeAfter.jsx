@@ -9,8 +9,8 @@ const transformations = [
     id: 1,
     category: "Hair Color",
     title: "Platinum Blonde Transformation",
-    before: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=800&q=80",
-    after: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80",
+    before: "images/3.jpeg",
+    after: "images/4.jpeg",
     description: "From dark brunette to stunning platinum blonde",
     duration: "4 hours",
     color: "gold"
@@ -19,8 +19,8 @@ const transformations = [
     id: 2,
     category: "Haircut & Style",
     title: "Modern Bob Makeover",
-    before: "https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=800&q=80",
-    after: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
+    before: "images/6.jpeg",
+    after: "images/5.jpeg",
     description: "Chic bob with dimensional balayage",
     duration: "3 hours",
     color: "red"
@@ -29,9 +29,9 @@ const transformations = [
     id: 3,
     category: "Color Correction",
     title: "Vivid Red Revival",
-    before: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&q=80",
-    after: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80",
-    description: "Corrected brassy tones to vibrant red",
+    before: "images/8.jpeg",
+    after: "images/7.jpeg",
+    description: "Corrected brassy tones to vibrant blonde",
     duration: "5 hours",
     color: "gold"
   },
@@ -39,8 +39,8 @@ const transformations = [
     id: 4,
     category: "Hair Treatment",
     title: "Keratin Smoothing",
-    before: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800&q=80",
-    after: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=800&q=80",
+    before: "images/10.jpeg",
+    after: "images/9.jpeg",
     description: "Frizz-free, silky smooth hair",
     duration: "2.5 hours",
     color: "red"
@@ -49,8 +49,8 @@ const transformations = [
     id: 5,
     category: "Balayage",
     title: "Sun-Kissed Highlights",
-    before: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80",
-    after: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&q=80",
+    before: "images/11.jpeg",
+    after: "images/12.jpeg",
     description: "Natural-looking dimensional color",
     duration: "3.5 hours",
     color: "gold"
@@ -59,8 +59,8 @@ const transformations = [
     id: 6,
     category: "Complete Makeover",
     title: "Full Transformation",
-    before: "https://images.unsplash.com/photo-1524502397800-2eeaad7c3fe5?w=800&q=80",
-    after: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80",
+    before: "images/13.jpeg",
+    after: "images/14.jpeg",
     description: "Cut, color, and style complete revamp",
     duration: "6 hours",
     color: "red"
@@ -271,6 +271,7 @@ const BeforeAfterCard = ({ transformation, index }) => {
               <div className="w-2 h-2 rounded-full bg-white/40" />
               <span className="font-semibold">{transformation.duration}</span>
             </div>
+            <a href="https://www.instagram.com/dolce_e_luce?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="> 
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -279,6 +280,7 @@ const BeforeAfterCard = ({ transformation, index }) => {
               Book Similar
               <ArrowRight className="h-3 w-3 md:h-4 md:w-4" />
             </motion.button>
+             </a>
           </motion.div>
         </div>
       </div>
@@ -398,15 +400,17 @@ const BeforeAfterSection = () => {
           <p className="text-lg md:text-xl text-white/80 mb-6 md:mb-8">
             Ready for your own transformation?
           </p>
+          <a href="https://www.instagram.com/dolce_e_luce?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">  
           <motion.button
             whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(212, 175, 55, 0.6)" }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-[#D4AF37] to-[#f4d03f] text-black text-base md:text-lg font-black px-8 md:px-12 py-4 md:py-6 rounded-full shadow-2xl"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-[#D4AF37] to-[#f4d03f] text-black text-base md:text-lg font-black px-8 md:px-12 py-4 md:py-6 rounded-full shadow-2xl cursor-pointer"
           >
             <Sparkles className="h-5 w-5 md:h-6 md:w-6" />
             Schedule Your Transformation
             <ArrowRight className="h-5 w-5 md:h-6 md:w-6" />
           </motion.button>
+          </a>
         </motion.div>
       </div>
     </div>

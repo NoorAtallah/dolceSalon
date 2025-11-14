@@ -96,10 +96,10 @@ const HeroSection = () => {
         {/* Floating Salon Images */}
         <div className="absolute inset-0 pointer-events-none hidden lg:block">
           {[
-            { img: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80", pos: "top-24 left-[8%]", delay: 0 },
-            { img: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=400&q=80", pos: "top-32 right-[10%]", delay: 2 },
-            { img: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=400&q=80", pos: "bottom-24 left-[12%]", delay: 4 },
-            { img: "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=400&q=80", pos: "bottom-32 right-[8%]", delay: 6 },
+            { img: "/images/25.png", pos: "top-24 left-[8%]", delay: 0 },
+            { img: "/images/21.jpeg", pos: "top-32 right-[10%]", delay: 2 },
+            { img: "/images/18.jpg", pos: "bottom-24 left-[12%]", delay: 4 },
+            { img: "/images/20.jpg", pos: "bottom-32 right-[8%]", delay: 6 },
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -197,7 +197,7 @@ const HeroSection = () => {
           className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 mb-8 md:mb-12 max-w-4xl mx-auto"
         >
           {[
-            { icon: Award, label: "Award Winning", value: "15+ Years", color: "gold" },
+            { icon: Award, label: "Award Winning", value: "20+ Years", color: "gold" },
             { icon: Users, label: "Happy Clients", value: "50K+", color: "red" },
             { icon: Heart, label: "Satisfaction", value: "98%", color: "gold" },
           ].map((stat, i) => (
@@ -271,7 +271,7 @@ const HeroSection = () => {
         </motion.div>
 
         {/* Scroll Indicator */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 1 }}
@@ -288,7 +288,7 @@ const HeroSection = () => {
               className="w-[3px] bg-gradient-to-b from-[#D4AF37] via-[#ff0000] to-transparent rounded-full"
             />
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </div>
   );

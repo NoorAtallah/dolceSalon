@@ -128,17 +128,21 @@ const SalonNavbar = () => {
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37] to-[#ff0000] rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity" />
                   <div className="relative bg-gradient-to-br from-[#D4AF37] to-[#f4d03f] rounded-full p-2">
-                    <Sparkles className="h-6 w-6 text-black" />
+                    <img
+                      src="/images/2.png"
+                      alt="Dolce e Luce Salon Logo"
+                      className="h-10 w-10 md:h-12 md:w-12 object-contain"
+                    />
                   </div>
                 </motion.div>
                 <div>
                   <h1 className="text-2xl font-black text-white tracking-tight">
                     Dolce e Luce 
-                    <span className="bg-gradient-to-r from-[#D4AF37] to-[#ff0000] bg-clip-text text-transparent ml-2">
+                    {/* <span className="bg-gradient-to-r from-[#D4AF37] to-[#ff0000] bg-clip-text text-transparent ml-2">
                       SALON
-                    </span>
+                    </span> */}
                   </h1>
-                  <p className="text-[10px] text-white/50 uppercase tracking-widest">Premium Beauty</p>
+                  <p className="text-[10px] text-white/50 uppercase tracking-widest">Where Passion Meets Fashion</p>
                 </div>
               </Link>
 
@@ -259,7 +263,7 @@ const SalonNavbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 lg:hidden"
+            className="fixed inset-0 z-[60] lg:hidden"
           >
             {/* Backdrop */}
             <motion.div
@@ -278,8 +282,20 @@ const SalonNavbar = () => {
               transition={{ type: "spring", bounce: 0, duration: 0.4 }}
               className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-gradient-to-b from-black via-black/95 to-black border-l border-[#D4AF37]/20 overflow-y-auto"
             >
+              {/* Close Button */}
+              <div className="absolute top-6 right-6 z-10">
+                <motion.button
+                  whileHover={{ scale: 1.1, rotate: 90 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => setIsOpen(false)}
+                  className="w-12 h-12 rounded-full bg-gradient-to-br from-[#D4AF37]/20 to-[#ff0000]/20 border-2 border-[#D4AF37]/50 flex items-center justify-center text-white hover:bg-[#D4AF37]/30 transition-all"
+                >
+                  <X className="h-6 w-6" />
+                </motion.button>
+              </div>
+
               {/* Mobile Menu Header */}
-              <div className="p-6 border-b border-[#D4AF37]/20">
+              <div className="p-6 pt-20 border-b border-[#D4AF37]/20">
                 {/* Mobile Quick Info */}
                 <div className="space-y-3 text-sm text-white/70">
                   <div className="flex items-center gap-2">

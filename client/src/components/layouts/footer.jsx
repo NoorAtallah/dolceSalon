@@ -177,8 +177,8 @@ function SalonFooter() {
         </div>
       </div>
 
-      {/* Text hover effect */}
-      <div className="lg:flex hidden h-[30rem] -mt-52 -mb-36">
+      {/* Text hover effect - Responsive for all screens */}
+      <div className="flex h-[15rem] sm:h-[20rem] md:h-[25rem] lg:h-[30rem] -mt-24 sm:-mt-32 md:-mt-40 lg:-mt-52 -mb-16 sm:-mb-20 md:-mb-28 lg:-mb-36">
         <TextHoverEffect text="DOLCE" className="z-50" />
       </div>
 

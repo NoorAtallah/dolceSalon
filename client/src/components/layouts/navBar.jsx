@@ -204,7 +204,7 @@ const SalonNavbar = () => {
                   transition={{ delay: 0.5 }}
                   className="hidden lg:block"
                 >
-                  <Link href="/book">
+                  <Link href="https://www.instagram.com/dolce_e_luce?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D">
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}

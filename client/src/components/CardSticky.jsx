@@ -188,7 +188,7 @@ const CardSticky = React.memo(({ service, index }) => {
             />
             {service.highlight}
           </motion.div>
-
+<a href="https://www.instagram.com/dolce_e_luce?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"> 
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -197,6 +197,7 @@ const CardSticky = React.memo(({ service, index }) => {
             <Calendar className="h-4 w-4 md:h-5 md:w-5" />
             Book Now
           </motion.button>
+          </a>
         </motion.div>
       </div>
     </motion.div>

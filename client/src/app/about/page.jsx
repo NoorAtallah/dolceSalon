@@ -4,7 +4,7 @@ import * as React from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Scissors, Sparkles, Globe, Award, Heart } from 'lucide-react';
 import { TextHoverEffect } from '../../components/layouts/exthovereffect';
-
+import Link from 'next/link';
 const AboutUsSection = () => {
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
@@ -295,6 +295,7 @@ const AboutUsSection = () => {
               transition={{ delay: 0.8 }}
               className="pt-8"
             >
+                <Link href ="/contact"> 
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -306,12 +307,15 @@ const AboutUsSection = () => {
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}
                 />
+                
                 <span className="relative z-10 flex items-center gap-3">
                   <Sparkles className="w-5 h-5" />
                   Experience the Artistry
                   <Sparkles className="w-5 h-5" />
                 </span>
+               
               </motion.button>
+               </Link>
             </motion.div>
           </div>
         </div>

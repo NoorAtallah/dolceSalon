@@ -2,13 +2,20 @@
 
 import * as React from "react"
 import { motion } from "framer-motion"
-import { Crown, Calendar, ArrowRight, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Crown, Calendar, ArrowRight, Instagram, Facebook } from 'lucide-react';
 
 const FinalCTASection = () => {
   const socialMedia = [
-    { Icon: Instagram, color: "hover:bg-[#E4405F]" },
-    { Icon: Facebook, color: "hover:bg-[#1877F2]" },
-    { Icon: Twitter, color: "hover:bg-[#1DA1F2]" },
+    { 
+      Icon: Instagram, 
+      color: "hover:bg-[#E4405F]",
+      href: "https://www.instagram.com/dolce_e_luce?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
+    },
+    { 
+      Icon: Facebook, 
+      color: "hover:bg-[#1877F2]",
+      href: "https://web.facebook.com/people/Dolce-e-Luce/61556628203646/"
+    },
   ];
 
   return (
@@ -70,7 +77,10 @@ const FinalCTASection = () => {
         >
           Join thousands of satisfied clients who trust us with their beauty journey
         </motion.p>
-        <motion.button 
+        <motion.a
+          href="https://www.instagram.com/dolce_e_luce?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
+          target="_blank"
+          rel="noopener noreferrer"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(212, 175, 55, 0.6)" }}
@@ -87,7 +97,7 @@ const FinalCTASection = () => {
           <Calendar className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 relative z-10" />
           <span className="relative z-10">Schedule Consultation</span>
           <ArrowRight className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 relative z-10" />
-        </motion.button>
+        </motion.a>
 
         {/* Social Media Links */}
         <motion.div
@@ -99,7 +109,9 @@ const FinalCTASection = () => {
           {socialMedia.map((social, i) => (
             <motion.a
               key={i}
-              href="#"
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.15, y: -5 }}
               whileTap={{ scale: 0.95 }}
               className={`bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-full p-4 md:p-5 text-white transition-all duration-300 ${social.color}`}

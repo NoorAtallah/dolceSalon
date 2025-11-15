@@ -223,7 +223,10 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center"
         >
-          <motion.button 
+          <motion.a 
+            href="https://www.instagram.com/dolce_e_luce?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(212, 175, 55, 0.6)" }}
             whileTap={{ scale: 0.95 }}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 md:gap-3 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#f4d03f] px-8 sm:px-10 md:px-12 py-4 md:py-6 text-base sm:text-lg md:text-xl font-black text-black shadow-2xl relative overflow-hidden group"
@@ -237,16 +240,17 @@ const HeroSection = () => {
             <Calendar className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 relative z-10" />
             <span className="relative z-10">Book Appointment</span>
             <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 relative z-10" />
-          </motion.button>
+          </motion.a>
 
-          <motion.button 
+          <motion.a 
+            href="tel:+14074517828"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 md:gap-3 rounded-full bg-white/10 backdrop-blur-md border-2 border-white/30 px-8 sm:px-10 md:px-12 py-4 md:py-6 text-base sm:text-lg md:text-xl font-bold text-white shadow-2xl"
           >
             <Phone className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7" />
             <span>Call Us Now</span>
-          </motion.button>
+          </motion.a>
         </motion.div>
 
         {/* Quick Info Bar */}
@@ -262,11 +266,11 @@ const HeroSection = () => {
           </div>
           <div className="flex items-center justify-center gap-2 md:gap-3 bg-white/10 backdrop-blur-md rounded-full px-4 md:px-6 py-2.5 md:py-3 border border-white/20">
             <MapPin className="h-4 w-4 md:h-5 md:w-5 text-[#D4AF37]" />
-            <span className="font-semibold">Downtown Location</span>
+            <span className="font-semibold">12926 Tanja King Blvd</span>
           </div>
           <div className="flex items-center justify-center gap-2 md:gap-3 bg-white/10 backdrop-blur-md rounded-full px-4 md:px-6 py-2.5 md:py-3 border border-white/20">
             <Phone className="h-4 w-4 md:h-5 md:w-5 text-[#D4AF37]" />
-            <span className="font-semibold">(555) 123-4567</span>
+            <span className="font-semibold">(407) 451-7828</span>
           </div>
         </motion.div>
 

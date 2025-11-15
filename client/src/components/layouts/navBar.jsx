@@ -91,11 +91,11 @@ const SalonNavbar = () => {
               <div className="flex items-center gap-6 text-white/70">
                 <div className="flex items-center gap-2">
                   <Phone className="h-3 w-3 text-[#D4AF37]" />
-                  <span>(555) 123-4567</span>
+                  <span>(407) 451-7828</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="h-3 w-3 text-[#D4AF37]" />
-                  <span>Downtown Location</span>
+                  <span>12926 Tanja King Blvd</span>
                 </div>
               </div>
               <div className="flex items-center gap-3 text-white/70">

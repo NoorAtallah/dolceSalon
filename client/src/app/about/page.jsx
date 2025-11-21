@@ -14,7 +14,7 @@ const AboutUsSection = () => {
     offset: ["start end", "end start"]
   });
 const ScrollExpandMedia = dynamic(
-  () => import('@/components/scroll-expansion-hero-client'),
+  () => import('@/components/scroll-expansion-hero'),
   { ssr: false }
 );
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);

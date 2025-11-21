@@ -6,14 +6,17 @@ import { Scissors, Sparkles, Globe, Award, Heart } from 'lucide-react';
 import { TextHoverEffect } from '../../components/layouts/exthovereffect';
 import Link from 'next/link';
 import ScrollExpandMedia from '@/components/scroll-expansion-hero';
-
+import dynamic from 'next/dynamic';
 const AboutUsSection = () => {
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
   });
-
+const ScrollExpandMedia = dynamic(
+  () => import('@/components/scroll-expansion-hero-client'),
+  { ssr: false }
+);
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 100]);
 

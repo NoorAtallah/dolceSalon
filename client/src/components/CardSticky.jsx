@@ -8,22 +8,23 @@ const CardSticky = React.memo(({ service, index }) => {
   const ref = React.useRef(null);
   const [isMobile, setIsMobile] = React.useState(false);
 
+  // Always call useScroll - hooks must be called unconditionally
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  // Always define all transforms - hooks must be called unconditionally
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0.8]);
+  const scale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.9, 1, 1, 0.98]);
+  const y = useTransform(scrollYProgress, [0, 0.3], [50, 0]);
+
   React.useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-
-  // Simplified transforms for mobile
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0.8]);
-  const scale = isMobile ? 1 : useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.9, 1, 1, 0.98]);
-  const y = isMobile ? 0 : useTransform(scrollYProgress, [0, 0.3], [50, 0]);
 
   const IconComponent = service.icon;
   const topOffset = 80 + (index * 40);
@@ -49,7 +50,6 @@ const CardSticky = React.memo(({ service, index }) => {
 
   const colors = getColorClasses(service.color);
 
-  // Simplified animation variants for mobile
   const mobileVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 }
@@ -73,7 +73,7 @@ const CardSticky = React.memo(({ service, index }) => {
       }}
       className={`relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl transition-shadow duration-300 ${colors.shadow} min-h-[70vh] md:min-h-[85vh] flex items-center justify-center border border-white/10`}
     >
-      {/* Background Image - Static on mobile */}
+      {/* Background Image */}
       <div className="absolute inset-0">
         <img 
           src={service.image} 
@@ -84,13 +84,13 @@ const CardSticky = React.memo(({ service, index }) => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90" />
       </div>
 
-      {/* Corner Accents - Static on mobile */}
+      {/* Corner Accents */}
       <div className={`absolute top-0 right-0 w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br ${colors.gradient} opacity-20 blur-3xl`} />
       <div className={`absolute bottom-0 left-0 w-32 h-32 md:w-40 md:h-40 bg-gradient-to-tr ${colors.gradient} opacity-20 blur-3xl`} />
 
-      {/* Content - Centered */}
+      {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-8 md:px-16 max-w-4xl mx-auto py-8 md:py-0">
-        {/* Icon - Simplified animation on mobile */}
+        {/* Icon */}
         <motion.div 
           initial="hidden"
           whileInView="visible"
@@ -117,7 +117,7 @@ const CardSticky = React.memo(({ service, index }) => {
           </span>
         </div>
 
-        {/* Title - Single animation on mobile */}
+        {/* Title */}
         <motion.h2
           initial="hidden"
           whileInView="visible"
@@ -141,7 +141,7 @@ const CardSticky = React.memo(({ service, index }) => {
           {service.description}
         </motion.p>
 
-        {/* Features Grid - No stagger on mobile */}
+        {/* Features Grid */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -173,14 +173,15 @@ const CardSticky = React.memo(({ service, index }) => {
           className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4"
         >
           <div className={`inline-flex items-center gap-2 rounded-full bg-gradient-to-r ${colors.gradient} px-6 md:px-8 py-3 md:py-4 text-sm md:text-base font-bold text-black shadow-2xl`}>
-            {!isMobile && (
+            {isMobile ? (
+              <span className="h-2 w-2 rounded-full bg-black" />
+            ) : (
               <motion.span 
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
                 className="h-2 w-2 rounded-full bg-black" 
               />
             )}
-            {isMobile && <span className="h-2 w-2 rounded-full bg-black" />}
             {service.highlight}
           </div>
           

@@ -47,7 +47,7 @@ const HeroSection = () => {
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.5 }}
-          src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=2000&q=80"
+          src="/images/34.jpeg"
           alt="Salon Hero"
           className="w-full h-full object-cover"
         />
@@ -262,7 +262,7 @@ const HeroSection = () => {
         >
           <div className="flex items-center justify-center gap-2 md:gap-3 bg-white/10 backdrop-blur-md rounded-full px-4 md:px-6 py-2.5 md:py-3 border border-white/20">
             <Clock className="h-4 w-4 md:h-5 md:w-5 text-[#D4AF37]" />
-            <span className="font-semibold">Mon-Sat: 9AM-8PM</span>
+            <span className="font-semibold">Open daily: 10AM–6pm</span>
           </div>
           <div className="flex items-center justify-center gap-2 md:gap-3 bg-white/10 backdrop-blur-md rounded-full px-4 md:px-6 py-2.5 md:py-3 border border-white/20">
             <MapPin className="h-4 w-4 md:h-5 md:w-5 text-[#D4AF37]" />
@@ -273,7 +273,22 @@ const HeroSection = () => {
             <span className="font-semibold">(407) 451-7828</span>
           </div>
         </motion.div>
-
+   <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="mt-8"
+          >
+            <a
+              href="/policy"
+              className="inline-flex items-center gap-2 text-white/60 hover:text-[#D4AF37] transition-colors text-sm font-bold group"
+            >
+              <span className="w-8 h-[2px] bg-white/20 group-hover:bg-[#D4AF37] transition-colors"></span>
+              View Cancellation Policy
+              <span className="w-8 h-[2px] bg-white/20 group-hover:bg-[#D4AF37] transition-colors"></span>
+            </a>
+          </motion.div>
         {/* Scroll Indicator */}
         {/* <motion.div
           initial={{ opacity: 0 }}

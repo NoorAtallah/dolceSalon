@@ -25,7 +25,7 @@ const FinalCTASection = () => {
         <motion.img
           animate={{ scale: [1, 1.05, 1] }}
           transition={{ duration: 15, repeat: Infinity }}
-          src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=2000&q=80"
+          src="/images/36.jpeg"
           alt="Final CTA"
           className="w-full h-full object-cover"
         />
@@ -120,6 +120,22 @@ const FinalCTASection = () => {
             </motion.a>
           ))}
         </motion.div>
+           <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 }}
+                    className="mt-8"
+                  >
+                    <a
+                      href="/policy"
+                      className="inline-flex items-center gap-2 text-white/60 hover:text-[#D4AF37] transition-colors text-sm font-bold group"
+                    >
+                      <span className="w-8 h-[2px] bg-white/20 group-hover:bg-[#D4AF37] transition-colors"></span>
+                      View Cancellation Policy
+                      <span className="w-8 h-[2px] bg-white/20 group-hover:bg-[#D4AF37] transition-colors"></span>
+                    </a>
+                  </motion.div>
       </motion.div>
     </div>
   );

@@ -87,7 +87,7 @@ const ContactUsPage = () => {
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.5 }}
-              src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1600&q=80"
+              src="/images/36.jpeg"
               alt="Dolce e Luce Salon"
               className="w-full h-full object-cover"
             />
@@ -195,10 +195,10 @@ const ContactUsPage = () => {
             <div className="border-r-4 border-[#ff0000] pr-8 md:pr-12 text-right">
               <p className="text-white/30 text-sm uppercase tracking-[0.3em] mb-4">Hours</p>
               <h3 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6">
-                9AM - 8PM
+               10AM – 6pm
               </h3>
-              <p className="text-2xl md:text-3xl text-white/60 mb-2">Monday - Saturday</p>
-              <p className="text-xl md:text-2xl text-white/40">Sunday: Closed</p>
+              <p className="text-2xl md:text-3xl text-white/60 mb-2">Open daily</p>
+              {/* <p className="text-xl md:text-2xl text-white/40">Sunday: Closed</p> */}
             </div>
           </motion.div>
 
@@ -290,10 +290,26 @@ const ContactUsPage = () => {
                   BOOK NOW
                 </div>
                 </a>
+                
               </div>
             </motion.a>
           </motion.div>
-
+   <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="mt-8"
+          >
+            <a
+              href="/policy"
+              className="inline-flex items-center gap-2 text-white/60 hover:text-[#D4AF37] transition-colors text-sm font-bold group"
+            >
+              <span className="w-8 h-[2px] bg-white/20 group-hover:bg-[#D4AF37] transition-colors"></span>
+              View Cancellation Policy
+              <span className="w-8 h-[2px] bg-white/20 group-hover:bg-[#D4AF37] transition-colors"></span>
+            </a>
+          </motion.div>
           {/* Bottom Quote */}
           <motion.div
             initial={{ opacity: 0 }}

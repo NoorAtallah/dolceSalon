@@ -412,7 +412,9 @@ const BeforeAfterSection = () => {
           </motion.button>
           </a>
         </motion.div>
+        
       </div>
+      
     </div>
   );
 };

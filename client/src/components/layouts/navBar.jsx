@@ -20,6 +20,7 @@ const NAV_ITEMS = [
   { label: "Our Services", href: "/services" },
   { label: "Our Portfolio", href: "/portfolio" },
   { label: "Contact Us", href: "/contact" },
+  { label: "Cancelation Policy", href: "/policy" },
 ];
 
 const SalonNavbar = () => {
@@ -99,7 +100,7 @@ const SalonNavbar = () => {
                 </div>
               </div>
               <div className="flex items-center gap-3 text-white/70">
-                <span className="hidden md:inline">Mon-Sat: 9AM-8PM</span>
+                <span className="hidden md:inline">Open daily: 10AM–6pm</span>
                 <span className="text-[#D4AF37]">•</span>
                 <span className="flex items-center gap-1">
                   <Crown className="h-3 w-3 text-[#D4AF37]" />
@@ -204,7 +205,7 @@ const SalonNavbar = () => {
                   transition={{ delay: 0.5 }}
                   className="hidden lg:block"
                 >
-                  <Link href="https://www.instagram.com/dolce_e_luce?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D">
+                  <Link href="https://www.vagaro.com/dolceeluce?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGny8AvlZhq4LbwBQg0pz2PyblKixwsr0zbzqdeW19Mipj3yK76MEJCIB12EAg_aem_KftGRU_--qPn16UeGL1gIw">
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}

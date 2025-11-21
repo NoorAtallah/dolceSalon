@@ -45,7 +45,7 @@ function SalonFooter() {
     },
     {
       icon: <Clock size={18} className="text-[#D4AF37]" />,
-      text: "Mon-Sat: 9AM-8PM",
+      text: "Open daily: 10AM–6pm",
     },
   ];
 
@@ -135,11 +135,11 @@ function SalonFooter() {
             &copy; {new Date().getFullYear()} Dolce e Luce. All rights reserved.
           </p>
 
-          {/* <div className="flex gap-4 text-white/60 text-xs">
-            <Link href="#" className="hover:text-[#D4AF37] transition-colors">Privacy Policy</Link>
-            <span>•</span>
-            <Link href="#" className="hover:text-[#D4AF37] transition-colors">Terms of Service</Link>
-          </div> */}
+          <div className="flex gap-4 text-white/60 text-xs">
+            <Link href="/policy" className="hover:text-[#D4AF37] transition-colors">Privacy Policy</Link>
+            {/* <span>•</span> */}
+            {/* <Link href="#" className="hover:text-[#D4AF37] transition-colors">Terms of Service</Link> */}
+          </div>
         </div>
       </div>
 

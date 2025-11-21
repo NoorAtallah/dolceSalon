@@ -13,7 +13,7 @@ export const SALON_SERVICES = [
       "Personalized Service",
       "Luxury Atmosphere"
     ],
-    highlight: "15+ Years Experience",
+    highlight: "20+ Years Experience",
     color: "gold"
   },
   {
@@ -34,14 +34,14 @@ export const SALON_SERVICES = [
   {
     id: "service-3",
     icon: Sparkles,
-    title: "Signature Treatments",
+    title: "Hair Treatments",
     description: "Indulge in our exclusive spa experiences designed to rejuvenate, refresh, and reveal your natural radiance and beauty.",
     image: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1200&q=80",
     features: [
-      "Spa Treatments",
-      "Skin Care",
-      "Relaxation Therapy",
-      "Beauty Enhancement"
+      "Deep conditioning",
+      "Keratin treatment ",
+      "Brazilian blowout",
+      "Mask treatments"
     ],
     highlight: "98% Satisfaction",
     color: "gold"

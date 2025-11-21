@@ -502,25 +502,46 @@ const ServicesPage = () => {
           <p className="text-xl text-white/60 mb-8">
             Call us now to schedule your luxury experience
           </p>
-          <motion.a
-            href="tel:4074517828"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block"
-          >
-            <div className="relative group">
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#D4AF37] to-[#ff0000] blur-xl opacity-50"
-                animate={{ opacity: [0.5, 0.8, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-              <div className="relative bg-gradient-to-r from-[#D4AF37] to-[#f4d03f] text-black font-black text-xl px-12 py-6 rounded-full flex items-center gap-4">
-                <Star className="w-6 h-6" />
-                (407) 451-7828
-                <Star className="w-6 h-6" />
+          
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+            <motion.a
+              href="tel:4074517828"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block"
+            >
+              <div className="relative group">
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-[#D4AF37] to-[#ff0000] blur-xl opacity-50"
+                  animate={{ opacity: [0.5, 0.8, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+                <div className="relative bg-gradient-to-r from-[#D4AF37] to-[#f4d03f] text-black font-black text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-full flex items-center gap-3 sm:gap-4 whitespace-nowrap">
+                  <Star className="w-5 h-5 sm:w-6 sm:h-6" />
+                  (407) 451-7828
+                  <Star className="w-5 h-5 sm:w-6 sm:h-6" />
+                </div>
               </div>
-            </div>
-          </motion.a>
+            </motion.a>
+          </div>
+
+          {/* Cancellation Policy Link */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="mt-8"
+          >
+            <a
+              href="/policy"
+              className="inline-flex items-center gap-2 text-white/60 hover:text-[#D4AF37] transition-colors text-sm font-bold group"
+            >
+              <span className="w-8 h-[2px] bg-white/20 group-hover:bg-[#D4AF37] transition-colors"></span>
+              View Cancellation Policy
+              <span className="w-8 h-[2px] bg-white/20 group-hover:bg-[#D4AF37] transition-colors"></span>
+            </a>
+          </motion.div>
         </motion.div>
       </section>
     </div>

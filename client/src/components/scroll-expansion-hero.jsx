@@ -4,7 +4,6 @@ import {
   useEffect,
   useRef,
   useState,
-  ReactNode,
 } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -25,8 +24,14 @@ const ScrollExpandMedia = ({
   const [mediaFullyExpanded, setMediaFullyExpanded] = useState(false);
   const [touchStartY, setTouchStartY] = useState(0);
   const [isMobileState, setIsMobileState] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   const sectionRef = useRef(null);
+
+  // Fix hydration - only run on client
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     setScrollProgress(0);
@@ -35,6 +40,8 @@ const ScrollExpandMedia = ({
   }, [mediaType]);
 
   useEffect(() => {
+    if (!isMounted) return;
+
     const handleWheel = (e) => {
       if (mediaFullyExpanded && e.deltaY < 0 && window.scrollY <= 5) {
         setMediaFullyExpanded(false);
@@ -101,20 +108,14 @@ const ScrollExpandMedia = ({
       }
     };
 
-    window.addEventListener('wheel', handleWheel, {
-      passive: false,
-    });
+    // Add event listeners with proper options
+    const wheelOptions = { passive: false };
+    const touchOptions = { passive: false };
+
+    window.addEventListener('wheel', handleWheel, wheelOptions);
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener(
-      'touchstart',
-      handleTouchStart,
-      { passive: false }
-    );
-    window.addEventListener(
-      'touchmove',
-      handleTouchMove,
-      { passive: false }
-    );
+    window.addEventListener('touchstart', handleTouchStart, touchOptions);
+    window.addEventListener('touchmove', handleTouchMove, touchOptions);
     window.addEventListener('touchend', handleTouchEnd);
 
     return () => {
@@ -124,9 +125,11 @@ const ScrollExpandMedia = ({
       window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('touchend', handleTouchEnd);
     };
-  }, [scrollProgress, mediaFullyExpanded, touchStartY]);
+  }, [scrollProgress, mediaFullyExpanded, touchStartY, isMounted]);
 
   useEffect(() => {
+    if (!isMounted) return;
+
     const checkIfMobile = () => {
       setIsMobileState(window.innerWidth < 768);
     };
@@ -135,7 +138,12 @@ const ScrollExpandMedia = ({
     window.addEventListener('resize', checkIfMobile);
 
     return () => window.removeEventListener('resize', checkIfMobile);
-  }, []);
+  }, [isMounted]);
+
+  // Prevent hydration mismatch
+  if (!isMounted) {
+    return null;
+  }
 
   const mediaWidth = 300 + scrollProgress * (isMobileState ? 650 : 1250);
   const mediaHeight = 400 + scrollProgress * (isMobileState ? 200 : 400);
@@ -147,10 +155,10 @@ const ScrollExpandMedia = ({
   return (
     <div
       ref={sectionRef}
-      className='transition-colors duration-700 ease-in-out overflow-x-hidden'
+      className='transition-colors duration-700 ease-in-out overflow-x-hidden bg-black'
     >
-      <section className='relative flex flex-col items-center justify-start min-h-[100dvh]'>
-        <div className='relative w-full flex flex-col items-center min-h-[100dvh]'>
+      <section className='relative flex flex-col items-center justify-start min-h-[100dvh] bg-black'>
+        <div className='relative w-full flex flex-col items-center min-h-[100dvh] bg-black'>
           <motion.div
             className='absolute inset-0 z-0 h-full'
             initial={{ opacity: 0 }}
@@ -219,6 +227,7 @@ const ScrollExpandMedia = ({
                   ) : (
                     <div className='relative w-full h-full pointer-events-none'>
                       <video
+                        key={mediaSrc}
                         src={mediaSrc}
                         poster={posterSrc}
                         autoPlay
@@ -228,8 +237,6 @@ const ScrollExpandMedia = ({
                         preload='auto'
                         className='w-full h-full object-cover rounded-xl'
                         controls={false}
-                        disablePictureInPicture
-                        disableRemotePlayback
                       />
                       <div
                         className='absolute inset-0 z-10'
@@ -252,6 +259,7 @@ const ScrollExpandMedia = ({
                       width={1280}
                       height={720}
                       className='w-full h-full object-cover rounded-xl'
+                      priority
                     />
 
                     <motion.div
@@ -304,7 +312,7 @@ const ScrollExpandMedia = ({
             </div>
 
             <motion.section
-              className='flex flex-col w-full px-8 py-10 md:px-16 lg:py-20'
+              className='flex flex-col w-full px-8 py-10 md:px-16 lg:py-20 bg-black'
               initial={{ opacity: 0 }}
               animate={{ opacity: showContent ? 1 : 0 }}
               transition={{ duration: 0.7 }}

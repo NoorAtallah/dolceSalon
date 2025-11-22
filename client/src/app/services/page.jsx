@@ -59,7 +59,7 @@ const ServicesPage = () => {
 
     // Nails
     { id: 35, name: "Manicure Gel", price: 35, duration: 45, category: "Nails", icon: Sparkles, popular: true, image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80" },
-    { id: 36, name: "Gel X", price: 60, duration: 60, category: "Nails", icon: Sparkles, image: "https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=600&q=80" },
+    { id: 36, name: "Gel X", price: 65, duration: 60, category: "Nails", icon: Sparkles, image: "https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=600&q=80" },
     { id: 37, name: "Dipping Nails", price: 45, duration: 60, category: "Nails", icon: Sparkles, popular: true, image: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=600&q=80" },
     { id: 38, name: "Dipping with Extensions", price: 55, duration: 75, category: "Nails", icon: Sparkles, image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=600&q=80" },
     { id: 39, name: "Full Set", price: 55, duration: 75, category: "Nails", icon: Sparkles, image: "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=600&q=80" },

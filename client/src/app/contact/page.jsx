@@ -285,7 +285,7 @@ const ContactUsPage = () => {
             >
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37] to-[#ff0000] blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
-                <a href="https://www.instagram.com/dolce_e_luce?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"> 
+                <a href="https://www.vagaro.com/dolceeluce?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGny8AvlZhq4LbwBQg0pz2PyblKixwsr0zbzqdeW19Mipj3yK76MEJCIB12EAg_aem_KftGRU_--qPn16UeGL1gIw" target="_blank" rel="noopener noreferrer"> 
                 <div className="relative bg-gradient-to-r from-[#D4AF37] to-[#f4d03f] text-black font-black text-xl md:text-2xl px-12 md:px-16 py-6 md:py-8">
                   BOOK NOW
                 </div>

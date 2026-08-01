@@ -18,44 +18,44 @@ const ServicesPage = () => {
 
   const allServices = [
     // Haircuts
-    { id: 1, name: "Cut & Blow Dry", price: 80, duration: 60, category: "Haircuts", icon: Scissors, popular: true, image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" },
-    { id: 2, name: "Cut & Blow Dry Textured Hair", price: 120, duration: 75, category: "Haircuts", icon: Scissors, image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80" },
-    { id: 3, name: "Blow Dry", price: 45, duration: 30, category: "Haircuts", icon: Scissors, popular: true, image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" },
-    { id: 4, name: "Blow Dry Textured Hair", price: 60, duration: 45, category: "Haircuts", icon: Scissors, image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" },
-    { id: 5, name: "Add Flat Iron/Curling Iron", price: 15, duration: 15, category: "Haircuts", icon: Scissors, image: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80" },
-    { id: 6, name: "Blow Dry with Extensions", price: 65, duration: 45, category: "Haircuts", icon: Scissors, image: "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=600&q=80" },
+    { id: 1, name: "Cut & Blow Dry", price: 90, duration: 60, category: "Haircuts", icon: Scissors, popular: true, image: "/images/40.png" },
+    { id: 2, name: "Cut & Blow Dry Textured Hair", price: 150, duration: 75, category: "Haircuts", icon: Scissors, image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80" },
+    { id: 3, name: "Blow Dry", price: 50, duration: 30, category: "Haircuts", icon: Scissors, popular: true, image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" },
+    { id: 4, name: "Blow Dry Textured Hair", price: 110, duration: 45, category: "Haircuts", icon: Scissors, image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" },
+    { id: 5, name: "Add Flat Iron/Curling Iron", price: 20, duration: 15, category: "Haircuts", icon: Scissors, image: "https://prostylingtools.com/cdn/shop/files/SCSC75B_sq1_800x.jpg?v=1726159270" },
+    { id: 6, name: "Blow Dry with Extensions", price: 75, duration: 45, category: "Haircuts", icon: Scissors, image: "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=600&q=80" },
     { id: 7, name: "Bridal Up-do", price: 250, duration: 90, category: "Haircuts", icon: Scissors, premium: true, image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" },
     { id: 8, name: "Up-do/Event Styling", price: 95, duration: 60, category: "Haircuts", icon: Scissors, image: "https://images.unsplash.com/photo-1605980413706-c36dd5d3e6e1?w=600&q=80" },
 
     // Treatments
-    { id: 9, name: "Brazilian Blowout", price: 300, duration: 120, category: "Treatments", icon: Droplet, premium: true, image: "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=600&q=80" },
-    { id: 10, name: "Brazilian Rewind Treatment", price: 60, duration: 45, category: "Treatments", icon: Droplet, image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" },
-    { id: 11, name: "B3 Brazilian Bond Builder", price: 55, duration: 30, category: "Treatments", icon: Droplet, image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" },
-    { id: 12, name: "Brazilian Split Ends", price: 50, duration: 30, category: "Treatments", icon: Droplet, image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" },
-    { id: 13, name: "Deep Conditioning", price: 30, duration: 20, category: "Treatments", icon: Droplet, popular: true, image: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80" },
-    { id: 14, name: "Keratin Treatment", price: 275, duration: 120, category: "Treatments", icon: Droplet, premium: true, image: "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=600&q=80" },
+    { id: 9, name: "Brazilian Blowout", price: 315, duration: 120, category: "Treatments", icon: Droplet, premium: true, image: "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=600&q=80" },
+    { id: 10, name: "Brazilian Rewind Treatment", price: 55, duration: 45, category: "Treatments", icon: Droplet, image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" },
+    { id: 11, name: "B3 Brazilian Bond Builder", price: 75, duration: 30, category: "Treatments", icon: Droplet, image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" },
+    { id: 12, name: "Brazilian Split Ends", price: 65, duration: 30, category: "Treatments", icon: Droplet, image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" },
+    { id: 13, name: "Deep Conditioning", price: 35, duration: 20, category: "Treatments", icon: Droplet, popular: true, image: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80" },
+    { id: 14, name: "Keratin Treatment", price: 300, duration: 120, category: "Treatments", icon: Droplet, premium: true, image: "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=600&q=80" },
     { id: 15, name: "OLAPLEX", price: 50, duration: 30, category: "Treatments", icon: Droplet, popular: true, image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80" },
     { id: 16, name: "Collagen Treatment", price: 200, duration: 90, category: "Treatments", icon: Droplet, premium: true, image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" },
     { id: 17, name: "Kérastase Fusio-Dose", price: 45, duration: 30, category: "Treatments", icon: Droplet, image: "https://images.unsplash.com/photo-1605980413706-c36dd5d3e6e1?w=600&q=80" },
     { id: 18, name: "Kérastase Mask", price: 30, duration: 20, category: "Treatments", icon: Droplet, image: "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=600&q=80" },
 
     // Color
-    { id: 19, name: "Color Roots", price: 80, duration: 60, category: "Color", icon: Palette, popular: true, image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" },
-    { id: 20, name: "Color Melt", price: 95, duration: 90, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" },
-    { id: 21, name: "Full Color", price: 130, duration: 90, category: "Color", icon: Palette, popular: true, image: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80" },
-    { id: 22, name: "Platinum Retouch", price: 200, duration: 120, category: "Color", icon: Palette, premium: true, image: "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=600&q=80" },
-    { id: 23, name: "Full Hi-Lights", price: 200, duration: 120, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80" },
-    { id: 24, name: "Partial Hi-Lights", price: 160, duration: 90, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" },
-    { id: 25, name: "Babylights", price: 275, duration: 150, category: "Color", icon: Palette, premium: true, image: "https://images.unsplash.com/photo-1605980413706-c36dd5d3e6e1?w=600&q=80" },
-    { id: 26, name: "Partial Baby Lights", price: 200, duration: 120, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=600&q=80" },
-    { id: 27, name: "Air Touch Full", price: 275, duration: 150, category: "Color", icon: Palette, premium: true, image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" },
-    { id: 28, name: "Air Touch Partial", price: 200, duration: 120, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" },
-    { id: 29, name: "Full Balayage", price: 240, duration: 150, category: "Color", icon: Palette, popular: true, image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" },
-    { id: 30, name: "Partial Balayage", price: 175, duration: 120, category: "Color", icon: Palette, popular: true, image: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80" },
-    { id: 31, name: "OMBRÉ", price: 260, duration: 150, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=600&q=80" },
-    { id: 32, name: "Toner", price: 45, duration: 30, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80" },
-    { id: 33, name: "Frame Highlight", price: 110, duration: 75, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" },
-    { id: 34, name: "Fantasy Color", price: 120, duration: 120, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1605980413706-c36dd5d3e6e1?w=600&q=80" },
+    { id: 19, name: "Color Roots", price: 90, duration: 60, category: "Color", icon: Palette, popular: true, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVOEeIaYklafa_qiLofp-sLvuA_GLqmJFP1UNT-Nb4WEP_lvnu8dVCriy7&s=10" },
+    { id: 20, name: "Color Melt", price: 105, duration: 90, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" },
+    { id: 21, name: "Full Color", price: 135, duration: 90, category: "Color", icon: Palette, popular: true, image: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80" },
+    { id: 22, name: "Platinum Retouch", price: 290, duration: 120, category: "Color", icon: Palette, premium: true, image: "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=600&q=80" },
+    { id: 23, name: "Full Hi-Lights", price: 230, duration: 120, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80" },
+    { id: 24, name: "Partial Hi-Lights", price: 175, duration: 90, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" },
+    { id: 25, name: "Babylights", price: 300, duration: 150, category: "Color", icon: Palette, premium: true, image: "https://images.unsplash.com/photo-1605980413706-c36dd5d3e6e1?w=600&q=80" },
+    { id: 26, name: "Partial Baby Lights", price: 250, duration: 120, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=600&q=80" },
+    { id: 27, name: "Air Touch Full", price: 300, duration: 150, category: "Color", icon: Palette, premium: true, image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" },
+    { id: 28, name: "Air Touch Partial", price: 250, duration: 120, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" },
+    { id: 29, name: "Full Balayage", price: 275, duration: 150, category: "Color", icon: Palette, popular: true, image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" },
+    { id: 30, name: "Partial Balayage", price: 220, duration: 120, category: "Color", icon: Palette, popular: true, image: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80" },
+    { id: 31, name: "OMBRÉ", price: 275, duration: 150, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=600&q=80" },
+    { id: 32, name: "Toner", price: 70, duration: 30, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80" },
+    { id: 33, name: "Frame Highlight", price: 125, duration: 75, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" },
+    { id: 34, name: "Fantasy Color", price: 135, duration: 120, category: "Color", icon: Palette, image: "https://images.unsplash.com/photo-1605980413706-c36dd5d3e6e1?w=600&q=80" },
 
     // Nails
     { id: 35, name: "Manicure Gel", price: 35, duration: 45, category: "Nails", icon: Sparkles, popular: true, image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80" },
@@ -453,8 +453,13 @@ const ServicesPage = () => {
 
                         {/* Price */}
                         <div className="flex items-center justify-between">
-                          <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#f4d03f]">
-                            ${service.price}
+                          <div>
+                            <span className="block text-[10px] uppercase tracking-widest font-bold text-white/50 mb-0.5">
+                              Starting from
+                            </span>
+                            <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#f4d03f]">
+                              ${service.price}
+                            </div>
                           </div>
 
                           <motion.a

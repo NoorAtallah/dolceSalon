@@ -378,12 +378,11 @@ const ServicesPage = () => {
                   >
                     {/* Image Background */}
                     <div className="absolute inset-0">
-                      <img
-                        src={service.image}
-                        alt={service.name}
-                        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-                        style={{ filter: "grayscale(100%)" }}
-                      />
+                     <img
+  src={service.image}
+  alt={service.name}
+  className="w-full h-full object-contain transition-all duration-700 group-hover:scale-110"
+/>
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent group-hover:from-black group-hover:via-black/80 transition-all duration-500" />
                     </div>
 

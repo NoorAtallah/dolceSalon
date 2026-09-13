@@ -26,7 +26,7 @@ const ScrollExpandMedia = dynamic(
     { title: "Balayage Expert", desc: "Natural dimensional color" },
     { title: "Bridal Specialist", desc: "Your dream look realized" },
     { title: "Keratin Pro", desc: "Smooth, silky perfection" },
-    { title: "Global Trained", desc: "Jordan • Europe • USA" }
+    { title: "Global Trained", desc: " Europe • USA" }
   ];
 
   return (
@@ -224,7 +224,7 @@ const ScrollExpandMedia = dynamic(
                   </p>
                   
                   <p className="text-base md:text-lg text-white/60 leading-relaxed">
-                    From the ancient traditions of Jordan to the cutting-edge techniques 
+                    From the ancient traditions to the cutting-edge techniques 
                     of European haute couture, culminating in the dynamic American salon 
                     scene—every experience has been woven into his signature style.
                   </p>
@@ -232,7 +232,6 @@ const ScrollExpandMedia = dynamic(
                   {/* World Journey Icons */}
                   <div className="flex gap-4 pt-4">
                     {[
-                      { flag: "🇯🇴", label: "Jordan", desc: "Heritage" },
                       { flag: "🇪🇺", label: "Europe", desc: "Refinement" },
                       { flag: "🇺🇸", label: "USA", desc: "Innovation" }
                     ].map((location, i) => (

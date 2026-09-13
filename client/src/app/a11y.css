@@ -1,0 +1,192 @@
+/* ==========================================================================
+   Accessibility overrides — driven by data-a11y-* attributes on <html>
+   Set by @/components/a11y/AccessibilityWidget
+   ========================================================================== */
+
+/* ---- Dyslexia friendly font ---- */
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic@5.0.6/files/opendyslexic-latin-400-normal.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic@5.0.6/files/opendyslexic-latin-700-normal.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+html[data-a11y-dyslexic="on"] body *:not(.a11y-ui):not(.a11y-ui *) {
+  font-family: "OpenDyslexic", Comic Sans MS, cursive !important;
+  letter-spacing: 0.03em !important;
+}
+
+/* ---- Bigger text (root font scale) ---- */
+html[data-a11y-fontscale="1"] {
+  font-size: 112.5%;
+}
+html[data-a11y-fontscale="2"] {
+  font-size: 125%;
+}
+html[data-a11y-fontscale="3"] {
+  font-size: 145%;
+}
+/* Tailwind sizes are rem-based so root scaling covers most of it, but px
+   utilities and clamp() headings need a nudge too. */
+html[data-a11y-fontscale="1"] body *:not(.a11y-ui):not(.a11y-ui *) {
+  font-size: calc(1em * 1.05);
+}
+html[data-a11y-fontscale="2"] body *:not(.a11y-ui):not(.a11y-ui *) {
+  font-size: calc(1em * 1.08);
+}
+html[data-a11y-fontscale="3"] body *:not(.a11y-ui):not(.a11y-ui *) {
+  font-size: calc(1em * 1.12);
+}
+
+/* ---- Text spacing ---- */
+html[data-a11y-spacing="1"] body *:not(.a11y-ui):not(.a11y-ui *) {
+  letter-spacing: 0.05em !important;
+  word-spacing: 0.1em !important;
+}
+html[data-a11y-spacing="2"] body *:not(.a11y-ui):not(.a11y-ui *) {
+  letter-spacing: 0.1em !important;
+  word-spacing: 0.2em !important;
+}
+html[data-a11y-spacing="3"] body *:not(.a11y-ui):not(.a11y-ui *) {
+  letter-spacing: 0.16em !important;
+  word-spacing: 0.32em !important;
+}
+
+/* ---- Line height ---- */
+html[data-a11y-lineheight="1"] body *:not(.a11y-ui):not(.a11y-ui *) {
+  line-height: 1.6 !important;
+}
+html[data-a11y-lineheight="2"] body *:not(.a11y-ui):not(.a11y-ui *) {
+  line-height: 2 !important;
+}
+html[data-a11y-lineheight="3"] body *:not(.a11y-ui):not(.a11y-ui *) {
+  line-height: 2.5 !important;
+}
+
+/* ---- Text align ---- */
+html[data-a11y-align="left"] body *:not(.a11y-ui):not(.a11y-ui *) {
+  text-align: left !important;
+}
+html[data-a11y-align="center"] body *:not(.a11y-ui):not(.a11y-ui *) {
+  text-align: center !important;
+}
+html[data-a11y-align="right"] body *:not(.a11y-ui):not(.a11y-ui *) {
+  text-align: right !important;
+}
+
+/* ---- Highlight links ---- */
+html[data-a11y-links="on"] body a:not(.a11y-ui):not(.a11y-ui *),
+html[data-a11y-links="on"] body button:not(.a11y-ui):not(.a11y-ui *) {
+  outline: 2px solid #ffd400 !important;
+  outline-offset: 2px !important;
+  background-color: rgba(255, 212, 0, 0.14) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+}
+
+/* ---- Hide images ---- */
+html[data-a11y-images="hidden"] body img:not(.a11y-ui):not(.a11y-ui *),
+html[data-a11y-images="hidden"] body svg:not(.a11y-ui):not(.a11y-ui *),
+html[data-a11y-images="hidden"] body video:not(.a11y-ui):not(.a11y-ui *),
+html[data-a11y-images="hidden"] body picture:not(.a11y-ui):not(.a11y-ui *) {
+  visibility: hidden !important;
+}
+html[data-a11y-images="hidden"] body *:not(.a11y-ui):not(.a11y-ui *) {
+  background-image: none !important;
+}
+
+/* ---- Pause animations (CSS side; Framer Motion handled via MotionConfig) --- */
+html[data-a11y-motion="paused"] body *:not(.a11y-ui):not(.a11y-ui *),
+html[data-a11y-motion="paused"] body *:not(.a11y-ui):not(.a11y-ui *)::before,
+html[data-a11y-motion="paused"] body *:not(.a11y-ui):not(.a11y-ui *)::after {
+  animation-play-state: paused !important;
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* ---- Big cursor ---- */
+html[data-a11y-cursor="big"] body,
+html[data-a11y-cursor="big"] body *:not(.a11y-ui):not(.a11y-ui *) {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24'%3E%3Cpath d='M4 2 L4 20 L9 15.5 L12 22 L15 20.5 L12 14.5 L18.5 14.5 Z' fill='%23000' stroke='%23fff' stroke-width='1.4'/%3E%3C/svg%3E")
+      2 2,
+    auto !important;
+}
+html[data-a11y-cursor="big"] body a:not(.a11y-ui):not(.a11y-ui *),
+html[data-a11y-cursor="big"] body button:not(.a11y-ui):not(.a11y-ui *) {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24'%3E%3Cpath d='M9 2 L9 12 L6.5 9.5 L4.5 11.5 L9.5 20 L19 20 L20 11 L16 10 L15.5 8 L12.5 7.5 L12 2 Z' fill='%23000' stroke='%23fff' stroke-width='1.4'/%3E%3C/svg%3E")
+      6 2,
+    pointer !important;
+}
+
+/* ---- Saturation / Contrast ----
+   Applied to <html> on purpose: a filter creates a containing block for
+   position:fixed descendants, and <html> fills the initial containing block,
+   so the fixed navbar keeps behaving correctly. (Filtering body > * would
+   break it.) Trade-off: the panel is tinted too, same as UserWay. */
+html[data-a11y-saturation="low"] {
+  filter: saturate(0.5);
+}
+html[data-a11y-saturation="high"] {
+  filter: saturate(2.2);
+}
+html[data-a11y-saturation="mono"] {
+  filter: grayscale(1);
+}
+
+html[data-a11y-contrast="invert"] {
+  filter: invert(1) hue-rotate(180deg);
+}
+html[data-a11y-contrast="dark"] {
+  filter: contrast(1.45) brightness(0.92);
+}
+html[data-a11y-contrast="light"] {
+  filter: contrast(1.25) brightness(1.25);
+}
+
+/* Saturation + contrast can both be active - compose them */
+html[data-a11y-saturation="mono"][data-a11y-contrast="dark"] {
+  filter: grayscale(1) contrast(1.45) brightness(0.92);
+}
+html[data-a11y-saturation="mono"][data-a11y-contrast="light"] {
+  filter: grayscale(1) contrast(1.25) brightness(1.25);
+}
+html[data-a11y-saturation="mono"][data-a11y-contrast="invert"] {
+  filter: grayscale(1) invert(1);
+}
+html[data-a11y-saturation="low"][data-a11y-contrast="dark"] {
+  filter: saturate(0.5) contrast(1.45) brightness(0.92);
+}
+html[data-a11y-saturation="high"][data-a11y-contrast="dark"] {
+  filter: saturate(2.2) contrast(1.45) brightness(0.92);
+}
+
+/* ---- Widget's own tooltip bubble ---- */
+.a11y-tooltip {
+  position: fixed;
+  z-index: 2147483000;
+  max-width: 18rem;
+  padding: 0.375rem 0.625rem;
+  border-radius: 0.375rem;
+  background: #111827;
+  color: #fff;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* The panel must stay visible when images are hidden */
+.a11y-ui,
+.a11y-ui * {
+  visibility: visible !important;
+}
